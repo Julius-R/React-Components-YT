@@ -1,0 +1,229 @@
+// Example 1
+
+// @import url("https://fonts.googleapis.com/css?family=Montserrat:300")
+
+// *,
+// *::before,
+// *::after
+//   margin: 0
+//   padding: 0
+//   outline: none
+//   box-sizing: inherit
+
+// html,
+// body
+//   width: 100%
+//   height: 100%
+
+// html
+//   font-family: "Montserrat", sans-serif
+//   box-sizing: border-box
+
+// body
+//   background: #f3f9fb
+//   display: flex
+//   justify-content: center
+//   align-items: center
+
+// .cards
+//   width: 100%
+//   max-width: 80%
+//   margin: auto
+//   display: grid
+//   grid-gap: 1em
+//   grid-template-columns: 100%
+
+//   .card
+//     border: rgba(220, 220, 220, 0.4)
+//     border-radius: 10px
+//     box-shadow: 0px 0px 15px 5px rgba(220, 220, 220, 0.7)
+
+//     .card__image
+//       position: relative
+//       background: pink
+//       height: 300px
+//       width: 100%
+
+//       .card__image__icon
+//         display: none
+
+//       .card__image__img
+//         border-radius: 10px 10px 0 0
+//         width: 100%
+//         height: 300px
+
+//       &:hover
+//         cursor: pointer
+
+//         &:after
+//           content: " "
+//           border-radius: 10px 10px 0 0
+//           position: absolute
+//           height: 100%
+//           width: 100%
+//           top: 0
+//           left: 0
+//           right: 0
+//           background: rgba(106, 49, 250, 0.7)
+
+//         .card__image__icon
+//           display: block
+//           position: absolute
+//           z-index: 9
+//           top: 50%
+//           left: 50%
+//           transform: translate(-50%)
+//           font-size: 2.5em
+//           color: #fff
+
+//     .card__description
+//       border-radius: 0 0 10px 10px
+//       background: #FFF
+//       padding: 1em
+
+//       .itemPrice
+//         padding-top: 1em
+//         display: flex
+//         justify-content: space-between
+//         align-items: center
+
+//         .btn
+//           width: 120px
+//           padding: 0.5em
+//           border-radius: 5px
+//           font-size: 0.9em
+//           font-weight: 300
+//           text-transform: uppercase
+
+//           &:hover
+//             cursor: pointer
+
+//         .btn__primary
+//           color: #333
+//           border: 1px solid rgba(220, 220, 220, 1)
+//           background: rgba(240, 240, 240, 0.7)
+
+//           &:hover
+//             color: #fff
+//             border: 1px solid rgba(106, 49, 250, 1)
+//             background: rgba(106, 49, 250, 0.7)
+
+// @media screen and (min-width: 786px)
+//   .cards
+//     grid-template-columns: 1fr 1fr
+
+// @media screen and (min-width: 1300px)
+//   .cards
+//     grid-template-columns: 1fr 1fr 1fr
+
+
+
+// Example 2
+
+$gutter: 1.25em
+$blue: #63aabc
+$purple: #60204b
+$red: #ed3833
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,500,700")
+@import url("https://use.fontawesome.com/releases/v5.6.3/css/all.css")
+
+*,
+*::before,
+*::after
+    margin: 0
+    padding: 0
+    outline: none
+    box-sizing: border-box
+
+
+html,
+body
+    width: 100%
+    height: 100%
+
+
+html
+    font-family: "Montserrat", sans-serif
+    font-size: 300
+    box-sizing: border-box
+
+
+.container
+    width: 100%
+    max-width: 1200px
+    margin: 0 auto
+
+img
+    max-width: 100%
+    height: auto
+
+a
+    text-decoration: none
+    color: inherit
+
+.cardHolders
+    padding: $gutter
+    display: flex
+    flex-direction: column
+    color: #888
+
+    .card
+        border: 2px solid #ddd
+        margin-bottom: $gutter
+        padding: $gutter * 2 $gutter
+        text-align: center
+        border-radius: 5px
+        
+        span
+            font-size: $gutter * 2.5
+            margin-bottom: $gutter
+      
+        p
+            margin-bottom: $gutter - .5em
+            line-height: 1.25
+            font-size: $gutter - .35em
+        
+        .bold-text
+            margin-top: $gutter - .75em
+            font-size: $gutter
+            color: #333
+      
+        .link
+            color: $blue
+            &:hover
+                border-bottom: 2px solid
+            i
+                padding-left: 10px
+                vertical-align: text-bottom
+                font-size: inherit
+
+    .red
+        &:hover
+            cursor: pointer
+            border-top: 3px solid $red
+        & > span
+            color: $red
+    .blue
+        &:hover
+            cursor: pointer
+            border-top: 3px solid $blue
+        & > span
+            color: $blue
+    .purple
+        &:hover
+            cursor: pointer
+            border-top: 3px solid $purple
+        & > span
+            color: $purple
+
+@media screen and (min-width: 768px)
+    .cardHolders
+        height: 100vh
+        padding: 5% 5%
+        flex-direction: row
+        align-items: center
+        .card
+            margin: 0 $gutter - .75em
+            width: calc(33% - 1rem)
+            height: 275px
